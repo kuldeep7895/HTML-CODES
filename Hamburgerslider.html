@@ -1,0 +1,84 @@
+<! -- This is a sample code that produces a hamburger slider -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      margin: 0px;
+      padding: 0px;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .bar {
+      height: 3px;
+      width: 30px;
+      background-color: white;
+      margin-bottom: 3px;
+      border-radius: 2px;
+      transition: background-color 0.5s ease-out;
+    }
+    .bar1 {
+      transition: all 0.15s ease-out;
+    }
+    .bar2 {
+      transition: all 0.1s ease-out;
+    }
+    .bar3 {
+      transition: all 0.15s ease-out;
+    }
+    a:hover .bar {
+      background-color: #b8b8b8;
+    }
+    .hamburger {
+      padding: 0px 10px;
+    }
+    .getOut {
+      transform: translateX(-50px);
+      opacity: 0;
+    }
+    .rotate1 {
+      transform: rotateZ(45deg) translateY(4px);
+      border-radius: 0px;
+    }
+    .rotate2 {
+      transform: rotateZ(-45deg) translateY(-8px) translateX(4px);
+      border-radius: 0px;
+    }
+    .box {
+      width: 200px;
+      height: 200px;
+      background-color: #4a148c;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+  <body>
+    <div class="box">
+      <a href="#">
+        <div class="hamburger">
+          <div class="bar1 bar"></div>
+          <div class="bar2 bar"></div>
+          <div class="bar3 bar"></div>
+        </div>
+      </a>
+    </div>
+
+    <script>
+      document.querySelector("a").onclick = function () {
+        document.querySelector(".bar2").classList.toggle("getOut");
+        document.querySelector(".bar1").classList.toggle("rotate1");
+        document.querySelector(".bar3").classList.toggle("rotate2");
+      };
+    </script>
+  </body>
+</html>
